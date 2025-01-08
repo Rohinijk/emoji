@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 30px;
+}
+
+#emoji {
+  display: inline-block;
+  
+}
+
+.face {
+  width: 100px;
+  height: 150px;
+  background-color: yellow;
+  border-radius: 60%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eyes {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  right: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eye {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  animation: moveEyes 2s infinite alternate;
+}
+
+.eye::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+@keyframes moveEyes {
+  0% {
+      transform: translateX(0) translateY(0);
+  }
+  25% {
+      transform: translateX(-8px) translateY(-8px);
+  }
+  50% {
+      transform: translateX(8px) translateY(-8px); 
+  }
+  75% {
+      transform: translateX(8px) translateY(8px); 
+  }
+  100% {
+      transform: translateX(-8px) translateY(8px); 
+  }
+}
+
+.mouth {
+  width: 40px;
+  height: 10px;
+  background-color: brown;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 15%;
+  display: block;
+}
